@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Simulador de Financiamento</title>
+        <link rel="stylesheet" href="./css/style.css" />
+    </head>
+    <body>
+        <header>
+            <h1>SIMULADOR DE FINANCIAMENTO</h1>
+            <h2>Simulador de Financiamento SAC (Sistema de Amortização Constante)</h2>
+        </header>
+        <form>
+            <div id="labelForm">
+                <label for="textoValor">Quanto deseja Financiar?</label>
+                <label for="textoEntrada">Qual valor da Entrada?</label>
+                <label for="textoTaxaJuros">Informe a Taxa de Juros</label>
+                <label for="textoPrazo">Tempo do Financiamento</label>
+            </div>
+            <div id="inputForm">
+                <input id="textoValor" type="texto" placeholder="Valor do financiamento">
+                <input id="textoEntrada" type="texto" placeholder="Valor de entrada">
+                <input id="textoTaxaJuros" type="texto" placeholder="Taxa de Juros (%)">
+                <input id="textoPrazo" type="texto" placeholder="Prazo (em meses)">
+                <div id="carencia">
+                    <input id="comCarencia" type="checkbox"><label for="comCarencia">carência</label>
+                    <select id="listaCarencia">
+                        <option value="2">2 meses</option>
+                        <option value="3">3 meses</option>
+                        <option value="4">4 meses</option>
+                    </select>
+                </div>
+                <button id="botaoCalcular">Calcular</button>
+            </div>
+        </form>
+    </body>
+</html>
