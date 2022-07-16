@@ -10,7 +10,7 @@ class Financiamento {
         this.#taxaJuros = taxaJuros;
         this.#prazo = prazo;
         // composição - class Financiamento possui objetos da class Parcelas
-        this.#parcelas.push(new Parcela(0, 0, 0, valor - entrada))
+        this.#parcelas.push(new Parcela(0, 0, 0, 0, valor - entrada))
     }
 
     // método estático para cálculo do juros
@@ -32,6 +32,18 @@ class Financiamento {
                 saldo = 0;
             }
             this.#parcelas.push(new Parcela(numero, valor, juros, amortizacao, saldo));
+        }
+    }
+
+    // método para exibir as parcelas na aplicação
+    exibeParcelas() {
+        const parcelas = this.#parcelas.slice(1);
+        for (const parcela of parcelas) {
+            const linha = dadosTabela.insertRow(-1);
+            for (const dado of parcelas.getDadosFormatados()) {
+                const celula = linha.insertCell(-1);
+                celula.textContent = dado;
+            }
         }
     }
 }
