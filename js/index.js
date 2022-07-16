@@ -2,6 +2,7 @@
 
 const comCarencia = document.querySelector('#comCarencia');
 const listaCarencia = document.querySelector('#listaCarencia');
+const dadosTabela = document.querySelector('#dadosTabela');
 
 comCarencia.addEventListener('change', function() {
     if (this.checked) {
