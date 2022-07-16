@@ -10,5 +10,3 @@ comCarencia.addEventListener('change', function() {
         listaCarencia.style.visibility = 'hidden';
     }
 });
-
-console.log('teste');
