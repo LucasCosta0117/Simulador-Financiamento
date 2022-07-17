@@ -25,6 +25,6 @@ export class Parcela {
         dados.push(this.#juros.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}));
         dados.push(this.#amortizacao.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}));
         dados.push(this.#saldoDevedor.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}));
-        return dados;        
+        return dados;    
     }
 }
