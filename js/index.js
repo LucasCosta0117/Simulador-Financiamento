@@ -1,8 +1,16 @@
 'use strict';
 
+import {Financiamento} from './Financiamento.js';
+
 const comCarencia = document.querySelector('#comCarencia');
 const listaCarencia = document.querySelector('#listaCarencia');
-const dadosTabela = document.querySelector('#dadosTabela');
+const btnCalcular = document.querySelector('#btnCalcular');
+const tabelaCompleta = document.querySelector('#tabelaCompleta');
+const textoValor = document.querySelector('#textoValor');
+const textoEntrada = document.querySelector('#textoEntrada');
+const textoTaxaJuros = document.querySelector('#textoTaxaJuros');
+const textoPrazo = document.querySelector('#textoPrazo');
+
 
 comCarencia.addEventListener('change', function() {
     if (this.checked) {
@@ -10,4 +18,18 @@ comCarencia.addEventListener('change', function() {
     } else {
         listaCarencia.style.visibility = 'hidden';
     }
+});
+
+btnCalcular.addEventListener('click', function() {
+    const valor = parseFloat(textoValor.value);
+    const entrada = parseFloat(textoEntrada.value);
+    const taxaJuros = parseFloat(textoTaxaJuros.value);
+    const prazo = parseFloat(textoPrazo.value);
+
+    const simulacao = new Financiamento(valor, entrada, taxaJuros, prazo);
+
+    simulacao.calcParcelasMensais();
+    simulacao.exibeParcelas();
+
+    tabelaCompleta.style.visibility = 'visible';
 });
