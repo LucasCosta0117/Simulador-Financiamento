@@ -8,49 +8,56 @@
         <link rel="stylesheet" href="./css/style.css" />
     </head>
     <body>
-        <header>
-            <h1>SIMULADOR DE FINANCIAMENTO</h1>
-            <h2>Simulador de Financiamento SAC (Sistema de Amortização Constante)</h2>
-        </header>
-        <form>
-            <div id="labelForm">
-                <label for="textoValor">Quanto deseja Financiar?</label>
-                <label for="textoEntrada">Qual valor da Entrada?</label>
-                <label for="textoTaxaJuros">Informe a Taxa de Juros</label>
-                <label for="textoPrazo">Tempo do Financiamento</label>
-            </div>
-            <div id="inputForm">
-                <input id="textoValor" type="texto" placeholder="Valor do financiamento">
-                <input id="textoEntrada" type="texto" placeholder="Valor de entrada">
-                <input id="textoTaxaJuros" type="texto" placeholder="Taxa de Juros (%)">
-                <input id="textoPrazo" type="texto" placeholder="Prazo (em meses)">
-                <div id="carencia">
-                    <input id="comCarencia" type="checkbox"><label for="comCarencia">carência</label>
-                    <select id="listaCarencia">
-                        <option value="2">2 meses</option>
-                        <option value="3">3 meses</option>
-                        <option value="4">4 meses</option>
-                    </select>
+        <section id="aplicacao">
+                <header>
+                    <h1>SIMULADOR DE FINANCIAMENTO</h1>
+                    <h2>Simulador de Financiamento SAC (Sistema de Amortização Constante)</h2>
+                </header>
+                <form>
+                    <div id="labelForm">
+                        <label for="textoValor">Quanto deseja Financiar?</label>
+                        <label for="textoEntrada">Qual valor da Entrada?</label>
+                        <label for="textoTaxaJuros">Informe a Taxa de Juros</label>
+                        <label for="textoPrazo">Tempo do Financiamento</label>
+                    </div>
+                    <div id="inputForm">
+                    <input id="textoValor" type="texto" placeholder="Valor do financiamento">
+                    <input id="textoEntrada" type="texto" placeholder="Valor de entrada">
+                    <input id="textoTaxaJuros" type="texto" placeholder="Taxa de Juros (%)">
+                    <input id="textoPrazo" type="texto" placeholder="Prazo (em meses)">
+                    <div id="carencia">
+                        <input id="comCarencia" type="checkbox"><label for="comCarencia">carência</label>
+                        <select id="listaCarencia">
+                            <option value="2">2 meses</option>
+                            <option value="3">3 meses</option>
+                            <option value="4">4 meses</option>
+                        </select>
+                    </div>
+                    <button id="btnCalcular" type="button">Simular</button>
                 </div>
-                <button id="btnCalcular">Calcular</button>
+            </form>
+        </section>
 
-            </div>
-        </form>
-        <table id="tabelaCompleta">
-            <thead>
-                <tr>
-                    <th>Nº</th>
-                    <th>Parcela [R$]</th>
-                    <th>Amortização [R$]</th>
-                    <th>Juros [R$]</th>
-                    <th>Saldo Devedor [R$]</th>
-                </tr>
-            </thead>
-            <tbody id="dadosTabela">
-                <!-- elementos inseridos via JS -->
-            </tbody>
-        </table>
+        <section id="resultados">
+            <table id="tabelaCompleta">
+                <thead>
+                    <tr>
+                        <th>Nº</th>
+                        <th>Parcela [R$]</th>
+                        <th>Amortização [R$]</th>
+                        <th>Juros [R$]</th>
+                        <th>Saldo Devedor [R$]</th>
+                    </tr>
+                </thead>
+                <tbody id="dadosTabela">
+                    <!-- elementos inseridos via JS -->
+                </tbody>
+            </table>
+            
+            <button type="button" id="btnNovaSimulacao">Nova Simulação</button>
+        </section>
 
+        <!-- carregamento dos módulos JS -->
         <script type="module" src="./js/index.js"></script>
     </body>
 </html>

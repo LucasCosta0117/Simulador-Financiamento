@@ -66,5 +66,8 @@ table, tr, th, td {
     margin: 30px 0px;
 }
 #tabelaCompleta {
-    visibility: visible;
+    visibility: hidden;
+}
+#btnNovaSimulacao {
+    visibility: hidden;
 }

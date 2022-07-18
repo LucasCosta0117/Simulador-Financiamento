@@ -15,7 +15,7 @@ const textoPrazo = document.querySelector('#textoPrazo');
 const btnNovaSimulacao = document.querySelector('#btnNovaSimulacao');
 const carencia = document.querySelector('#carencia');
 
-
+//Evento para exibir ou ocultar opções de carência
 comCarencia.addEventListener('change', function() {
     if (this.checked) {
         listaCarencia.style.visibility = 'visible';
@@ -24,6 +24,7 @@ comCarencia.addEventListener('change', function() {
     }
 });
 
+//Evento para realiar a simulação
 btnCalcular.addEventListener('click', function() {
     const valor = parseFloat(textoValor.value);
     const entrada = parseFloat(textoEntrada.value);
@@ -43,4 +44,28 @@ btnCalcular.addEventListener('click', function() {
     //Formata a exibição para o resultado desejado
     tabelaCompleta.style.visibility = 'visible';
     btnNovaSimulacao.style.visibility = 'visible';
+    btnCalcular.style.visibility = 'hidden';
+    if(comCarencia.checked == false) {
+        carencia.style.visibility = 'hidden';
+    }
+});
+
+//Evento para limpar os resultados e realizar uma nova simulação
+btnNovaSimulacao.addEventListener('click', function() {
+    //Reseta todos campos do form
+    textoValor.value = "";
+    textoEntrada.value = "";
+    textoTaxaJuros.value = "";
+    textoPrazo.value = "";
+    comCarencia.checked = false;
+    listaCarencia.style.visibility = 'hidden';
+    //Limpa a tabela;
+    while (dadosTabela.firstChild) {
+        dadosTabela.firstChild.remove();
+    }
+    //Restaura exibição para uma nova simulação
+    tabelaCompleta.style.visibility = 'hidden';
+    btnNovaSimulacao.style.visibility = 'hidden';
+    btnCalcular.style.visibility = 'visible';
+    carencia.style.visibility = 'visible';
 });
