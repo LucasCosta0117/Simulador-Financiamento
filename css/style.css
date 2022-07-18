@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+/* Reset CSS */
 * {
     box-sizing: border-box;
     padding: 0;
@@ -9,65 +13,93 @@
 }
 
 html {
-    background: rgb(35, 9, 128);
     color: white;
-    font: 10px tahoma;
+    font-size: 10px;
 }
 
-/* Cabeçalho */
-header {
-    margin-bottom: 30px;
+body {
+    max-width: 1024px;
+    margin: auto;
+    background-image: url(../src/images/backgroundimage_coins.jpg);
+    position: relative;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
 }
-header h1 {
-    font-size: 3.5em;
+
+/* Primeira seção contento somente a aplicação do simulador */
+#aplicacao {
+    display: flex;
+    flex-direction: column;
+    text-shadow: 2px 1px rgba(0, 0, 0, 0.4);
+}
+/* Cabeçalho da aplicação*/
+#aplicacao header {
+    font-family: 'Poppins', Tahoma, sans-serif;
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+#aplicacao header h1 {
+    font-size: 3em;
     font-weight: 600;
+    text-align: center;
 }
-header h2 {
-    font-size: 1.5em;
+#aplicacao header h2 {
+    font-size: 1.2em;
     font-weight: 600;
+    text-align: center;
 }
-
-
-form {
+/* Captção dos dados da aplicação */
+#aplicacao form {
     display: flex;
     font-size: 1em;
+    justify-content: flex-start;
+    margin: 0px 60px;
 }
-
 /* Área dos rótulos */
-form #labelForm{
+#aplicacao form #labelForm{
     display: flex;
     flex-direction: column;
+    position: relative;
+    width: 30%;
+    font-family: 'Poppins';
 }
-form #labelForm label{
+#aplicacao form #labelForm label{
     margin-bottom: 5px;
-    margin-right: 5px;
+    height: 30px;
 }
-
 /* Área dos dados */
-form #inputForm{
+#aplicacao form #inputForm{
     display: flex;
     flex-direction: column;
+    position: relative;
+    width: 70%;
 }
-form #inputForm input{
+#aplicacao form #inputForm input{
     margin-bottom: 5px;
+    height: 30px;
 }
-form #inputForm input::placeholder {
+#aplicacao form #inputForm input::placeholder {
     font-style: italic;
 }
-form #listaCarencia{
+#aplicacao form #listaCarencia{
     visibility: hidden;
 }
 
+
+#resultados {
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+}
 /* Tabela de resultados */
 table, tr, th, td {
     border: 1px solid white;
     border-collapse: collapse;
     padding: 5px 20px;
     margin: 30px 0px;
-}
-#tabelaCompleta {
-    visibility: hidden;
-}
-#btnNovaSimulacao {
-    visibility: hidden;
 }

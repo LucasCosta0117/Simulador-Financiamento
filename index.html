@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Simulador de Financiamento</title>
+        <link rel='icon' type="image/x-icon" href="./src/images/icon_cash_money.png">
         <link rel="stylesheet" href="./css/style.css" />
     </head>
     <body>
         <section id="aplicacao">
                 <header>
-                    <h1>SIMULADOR DE FINANCIAMENTO</h1>
-                    <h2>Simulador de Financiamento SAC (Sistema de Amortização Constante)</h2>
+                    <h1>Simulador de Financiamento</h1>
+                    <h2>Financiamento SAC (Sistema de Amortização Constante)</h2>
                 </header>
                 <form>
                     <div id="labelForm">
@@ -21,20 +22,20 @@
                         <label for="textoPrazo">Tempo do Financiamento</label>
                     </div>
                     <div id="inputForm">
-                    <input id="textoValor" type="texto" placeholder="Valor do financiamento">
-                    <input id="textoEntrada" type="texto" placeholder="Valor de entrada">
-                    <input id="textoTaxaJuros" type="texto" placeholder="Taxa de Juros (%)">
-                    <input id="textoPrazo" type="texto" placeholder="Prazo (em meses)">
-                    <div id="carencia">
-                        <input id="comCarencia" type="checkbox"><label for="comCarencia">carência</label>
-                        <select id="listaCarencia">
-                            <option value="2">2 meses</option>
-                            <option value="3">3 meses</option>
-                            <option value="4">4 meses</option>
-                        </select>
+                        <input id="textoValor" type="texto" placeholder="Valor do financiamento">
+                        <input id="textoEntrada" type="texto" placeholder="Valor de entrada">
+                        <input id="textoTaxaJuros" type="texto" placeholder="Taxa de Juros (%)">
+                        <input id="textoPrazo" type="texto" placeholder="Prazo (em meses)">
+                        <div id="carencia">
+                            <input id="comCarencia" type="checkbox"><label for="comCarencia">carência</label>
+                            <select id="listaCarencia">
+                                <option value="2">2 meses</option>
+                                <option value="3">3 meses</option>
+                                <option value="4">4 meses</option>
+                            </select>
+                        </div>
+                        <button id="btnCalcular" type="button">Simular</button>
                     </div>
-                    <button id="btnCalcular" type="button">Simular</button>
-                </div>
             </form>
         </section>
 
@@ -53,7 +54,6 @@
                     <!-- elementos inseridos via JS -->
                 </tbody>
             </table>
-            
             <button type="button" id="btnNovaSimulacao">Nova Simulação</button>
         </section>
 
