@@ -48,4 +48,10 @@ export class Financiamento {
             }
         }
     }
+
+    // método para exibir as parcelas na aplicação
+    getParcelas() {
+        return this.#parcelas;
+    }
+
 }

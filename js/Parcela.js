@@ -22,8 +22,8 @@ export class Parcela {
         const dados = [];
         dados.push(this.#numero);
         dados.push(this.#valor.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}));
-        dados.push(this.#juros.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}));
         dados.push(this.#amortizacao.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}));
+        dados.push(this.#juros.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}));
         dados.push(this.#saldoDevedor.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}));
         return dados;    
     }
