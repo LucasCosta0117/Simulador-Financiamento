@@ -6,7 +6,6 @@ import {FinanciamentoCarencia} from './FinanciamentoCarencia.js';
 const comCarencia = document.querySelector('#comCarencia');
 const listaCarencia = document.querySelector('#listaCarencia');
 const btnCalcular = document.querySelector('#btnCalcular');
-const tabelaCompleta = document.querySelector('#tabelaCompleta');
 const dadosTabela = document.querySelector('#dadosTabela');
 const textoValor = document.querySelector('#textoValor');
 const textoEntrada = document.querySelector('#textoEntrada');
@@ -14,6 +13,7 @@ const textoTaxaJuros = document.querySelector('#textoTaxaJuros');
 const textoPrazo = document.querySelector('#textoPrazo');
 const btnNovaSimulacao = document.querySelector('#btnNovaSimulacao');
 const carencia = document.querySelector('#carencia');
+const resultados = document.querySelector('#resultados');
 
 //Evento para exibir ou ocultar opções de carência
 comCarencia.addEventListener('change', function() {
@@ -42,8 +42,7 @@ btnCalcular.addEventListener('click', function() {
     simulacao.calcParcelasMensais();
     simulacao.exibeParcelas();
     //Formata a exibição para o resultado desejado
-    tabelaCompleta.style.visibility = 'visible';
-    btnNovaSimulacao.style.visibility = 'visible';
+    resultados.style.visibility = 'visible';
     btnCalcular.style.visibility = 'hidden';
     if(comCarencia.checked == false) {
         carencia.style.visibility = 'hidden';
@@ -64,8 +63,7 @@ btnNovaSimulacao.addEventListener('click', function() {
         dadosTabela.firstChild.remove();
     }
     //Restaura exibição para uma nova simulação
-    tabelaCompleta.style.visibility = 'hidden';
-    btnNovaSimulacao.style.visibility = 'hidden';
+    resultados.style.visibility = 'hidden';
     btnCalcular.style.visibility = 'visible';
     carencia.style.visibility = 'visible';
 });
