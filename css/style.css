@@ -17,15 +17,15 @@ html {
     font-size: 10px;
 }
 
-body {
-    max-width: 1024px;
-    margin: auto;
-    background-image: url(../src/images/backgroundimage_coins.jpg);
+body{
+    background-image: url(../src/images/backgroundimage_coins_2.jpg);
     position: relative;
     background-position: top center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    max-width: 1024px;
+    margin: auto;
     height: 100vh;
 }
 
@@ -135,12 +135,12 @@ body {
     padding: 5px 0px;
 }
 
+/* Segunda seção contento os resultados da simulação */
 #resultados {
     visibility: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0px auto;
 }
 #resultados #tabelaCompleta {
     margin-bottom: 50px;
@@ -162,4 +162,7 @@ body {
 }
 #resultados table tr:nth-child(even){
     background-color: rgba(225, 225, 225, 0.8);
+}
+#resultados #btnNovaSimulacao {
+    margin-bottom: 50px;
 }
