@@ -24,6 +24,7 @@ body {
     position: relative;
     background-position: top center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
     height: 100vh;
 }
@@ -32,74 +33,133 @@ body {
 #aplicacao {
     display: flex;
     flex-direction: column;
-    text-shadow: 2px 1px rgba(0, 0, 0, 0.4);
 }
 /* Cabeçalho da aplicação*/
 #aplicacao header {
     font-family: 'Poppins', Tahoma, sans-serif;
+    text-shadow: 2px 1px rgba(0, 0, 0, 0.6);
     margin-top: 50px;
     margin-bottom: 25px;
 }
 #aplicacao header h1 {
-    font-size: 3em;
+    font-size: 3.5em;
     font-weight: 600;
     text-align: center;
 }
 #aplicacao header h2 {
-    font-size: 1.2em;
+    font-size: 1.5em;
     font-weight: 600;
     text-align: center;
 }
-/* Captção dos dados da aplicação */
+/* Container geral da entrada de dados */
 #aplicacao form {
     display: flex;
-    font-size: 1em;
-    justify-content: flex-start;
-    margin: 0px 60px;
-}
-/* Área dos rótulos */
-#aplicacao form #labelForm{
-    display: flex;
     flex-direction: column;
-    position: relative;
-    width: 30%;
+    margin: 0px 60px;
     font-family: 'Poppins';
 }
-#aplicacao form #labelForm label{
-    margin-bottom: 5px;
-    height: 30px;
+/* Área dos label's e input's */
+#aplicacao form #entradaDados {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
-/* Área dos dados */
-#aplicacao form #inputForm{
+#aplicacao form #entradaDados .dados {
     display: flex;
     flex-direction: column;
-    position: relative;
-    width: 70%;
+    margin-top: 20px;
 }
-#aplicacao form #inputForm input{
-    margin-bottom: 5px;
-    height: 30px;
+/* Estilizando os label's */
+.dados label {
+    font-size: 1.5em;
+    text-shadow: 1px 1.5px black;
 }
-#aplicacao form #inputForm input::placeholder {
+/* Estilizando os input's */
+.dados input {
+    border: solid grey 1px;
+    border-radius: 3px;
+    box-shadow: 3px 2px grey;
+    padding: 15px 10px;
+    width: 430px;
+    font-size: 1.3em;
+}
+.dados input::placeholder {
     font-style: italic;
+    font-size: 1.1em;
 }
-#aplicacao form #listaCarencia{
+/* Estilizando área onde se executa os calculos */
+#aplicacao form #calculaDados{
+    display: flex;
+    flex-direction: column;
+}
+/* Área onde se escolhe a carência e calcula os dados */
+#aplicacao form #carencia{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+#aplicacao form #carencia div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1.3em;
+    text-shadow: 1px 1.5px black;
+}
+#aplicacao form #carencia #listaCarencia {
     visibility: hidden;
+    margin-left: 0px;
+    width: 430px;
+    border: solid grey 1px;
+    border-radius: 3px;
+    box-shadow: 2px 1px grey;
+    font-size: 1.2em;
 }
-
+/* Estilza os botões de Simulação e Nova Simulação */
+.cta {
+    font-family: 'Poppins';
+    font-size: 2.5em;
+    font-weight: 600;
+    color: white;
+    text-shadow: 2px 1px grey;
+    width: 430px;
+    margin: auto;
+    border: solid grey 1px;
+    border-radius: 5px;
+    box-shadow: 3px 2px grey;
+    background-color: #e9c46a;
+    padding: 5px 0px;
+}
 
 #resultados {
     visibility: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin: 20px auto;
+    margin: 0px auto;
+}
+#resultados #tabelaCompleta {
+    margin-bottom: 50px;
 }
 /* Tabela de resultados */
-table, tr, th, td {
+#resultados table, tr, th, td {
     border: 1px solid white;
     border-collapse: collapse;
     padding: 5px 20px;
-    margin: 30px 0px;
+    font-family: 'Oswald';
+    font-size: 1.2em;
+    text-shadow: 1px 1px rgb(100, 100, 100);
+}
+#resultados table th{    
+    background-color: rgba(128, 128, 128);
+}
+#resultados table tr:nth-child(odd){
+    background-color:  rgba(237, 237, 237, 0.9);
+}
+#resultados table tr:nth-child(even){
+    background-color: rgba(225, 225, 225, 0.8);
 }
