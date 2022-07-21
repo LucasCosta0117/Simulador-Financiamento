@@ -33,6 +33,7 @@ body{
 #aplicacao {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 /* Cabeçalho da aplicação*/
 #aplicacao header {
@@ -40,6 +41,7 @@ body{
     text-shadow: 2px 1px rgba(0, 0, 0, 0.6);
     margin-top: 50px;
     margin-bottom: 25px;
+    max-width: 80%;
 }
 #aplicacao header h1 {
     font-size: 3.5em;
@@ -52,73 +54,75 @@ body{
     text-align: center;
 }
 /* Container geral da entrada de dados */
-#aplicacao form {
+#mainContainer {
     display: flex;
     flex-direction: column;
-    margin: 0px 60px;
+    justify-content: space-between;
+    flex-wrap: nowrap;
     font-family: 'Poppins';
 }
+
 /* Área dos label's e input's */
-#aplicacao form #entradaDados {
+#entradaDados {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 20px;
 }
-#aplicacao form #entradaDados .dados {
+/* Container com um par label + input */
+.dados {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
+    width: 49%;
 }
-/* Estilizando os label's */
+/* Estilizando apenas os label's */
 .dados label {
     font-size: 1.5em;
     text-shadow: 1px 1.5px black;
 }
-/* Estilizando os input's */
+/* Estilizando apenas os input's */
 .dados input {
     border: solid grey 1px;
     border-radius: 3px;
     box-shadow: 3px 2px grey;
     padding: 15px 10px;
-    width: 430px;
     font-size: 1.3em;
 }
 .dados input::placeholder {
     font-style: italic;
     font-size: 1.1em;
 }
-/* Estilizando área onde se executa os calculos */
-#aplicacao form #calculaDados{
-    display: flex;
-    flex-direction: column;
-}
+
 /* Área onde se escolhe a carência e calcula os dados */
-#aplicacao form #carencia{
+#carencia{
     display: flex;
     flex-direction: row;
-    align-items: center;
+    flex-wrap: nowrap;
     justify-content: space-between;
+    align-items: center;
     margin-top: -10px;
     margin-bottom: 20px;
 }
-#aplicacao form #carencia div {
+#carencia div {
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
     align-items: center;
     font-size: 1.3em;
     text-shadow: 1px 1.5px black;
 }
-#aplicacao form #carencia #listaCarencia {
+#listaCarencia {
     visibility: hidden;
-    margin-left: 0px;
-    width: 430px;
+    width: 49%;
     border: solid grey 1px;
     border-radius: 3px;
     box-shadow: 2px 1px grey;
     font-size: 1.2em;
 }
+
 /* Estilza os botões de Simulação e Nova Simulação */
 .cta {
     font-family: 'Poppins';
@@ -126,13 +130,13 @@ body{
     font-weight: 600;
     color: white;
     text-shadow: 2px 1px grey;
-    width: 430px;
+    min-width: 75%;
     margin: auto;
     border: solid grey 1px;
     border-radius: 5px;
     box-shadow: 3px 2px grey;
     background-color: #e9c46a;
-    padding: 5px 0px;
+    padding: 5px auto;
 }
 
 /* Segunda seção contento os resultados da simulação */
@@ -141,28 +145,68 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-#resultados #tabelaCompleta {
-    margin-bottom: 50px;
+    justify-content: flex-start;
 }
 /* Tabela de resultados */
-#resultados table, tr, th, td {
+#tabelaCompleta, thead {
     border: 1px solid white;
     border-collapse: collapse;
-    padding: 5px 20px;
+    min-width: 75%;
+}
+#tabelaCompleta th, td {
+    padding: 5px 35px;
     font-family: 'Oswald';
-    font-size: 1.2em;
+    font-size: 1.5em;
+    font-weight: 600;
     text-shadow: 1px 1px rgb(100, 100, 100);
 }
-#resultados table th{    
+#tabelaCompleta th {    
     background-color: rgba(128, 128, 128);
 }
-#resultados table tr:nth-child(odd){
+#tabelaCompleta tr:nth-child(odd){
     background-color:  rgba(237, 237, 237, 0.9);
 }
-#resultados table tr:nth-child(even){
+#tabelaCompleta tr:nth-child(even){
     background-color: rgba(225, 225, 225, 0.8);
 }
-#resultados #btnNovaSimulacao {
-    margin-bottom: 50px;
+#btnNovaSimulacao {
+    margin: 50px 0px;
+}
+
+/* MEDIA QUERY - RESPONSIVIDADE DE TELAS*/
+@media only screen and (max-width: 1023px){
+    html{
+        font-size: 8px;
+    }
+    #mainContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #entradaDados {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .dados {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+        width: 100%;
+    }
+    #carencia{
+        justify-content: center;
+        align-items: center;
+    }
+    #listaCarencia{
+        width: 45%;
+        margin-left: 5px;
+    }
+    #tabelaCompleta {
+        padding: auto auto;
+        min-width: 80%;
+    }
 }
