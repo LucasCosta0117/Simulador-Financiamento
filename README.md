@@ -12,8 +12,10 @@
 ## 📑 Índice
 - [Sobre](#📋-sobre)
 - [Funcionalidades](#💻-funcionalidades)
+- [Tecnologias](#🔧-tecnologias)
 - [Serviços Utilizados](#🖥-serviços-utilizados)
-- [Serviços Utilizados](#🖥-serviços-utilizados)
+- [Agradecimentos](#🤝🏽-agradecimentos)
+- [Autor](#✍🏽-autor)
 
 <br>
 
